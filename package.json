@@ -1,17 +1,16 @@
 {
-  "name": "nodejs-get-started",
+  "name": "kycbit",
   "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
+  "description": "",
+  "keywords": [
+    "express"
+  ],
+  "author": "Anatoliy A Aksenov",
+  "license": "Unlicense",
   "dependencies": {
-    "body-parser": "~1.13.2",
-    "cookie-parser": "~1.3.5",
-    "debug": "~2.2.0",
-    "express": "~4.13.1",
-    "jade": "~1.11.0",
-    "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
+    "body-parser": "^1.13.2",
+    "cookie-parser": "^1.3.5",
+    "express": "^4.13.1",
+    "express-session": "^1.11.3"
   }
 }
