@@ -24,7 +24,7 @@
   function Add($scope, dataAssistant){
 
     $scope.add = function(){        
-        var hash = $scope.add_hash;
+        var hash = $scope.hash;
         dataAssistant.get('/api/add/' + hash).then(function(data){
             
             $scope.add_result = data;
@@ -32,6 +32,13 @@
             $scope.add_error = error;
         });
     };
-  }  
+    
+    $scope.calcHash = function(){
+      $scope.hash = SHA256($scope.firstname + $scope.lastname);
+    } 
+
+  }
+
+  
   
 })();	
