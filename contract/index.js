@@ -16,6 +16,8 @@ if(web3.isConnected()){
         kycbit = web3.eth.contract(abi).at(address);
         
         web3.eth.defaultAccount = web3.eth.accounts[0];
+} else {
+    kykbit.error = "Error created contract";
 }        
 
 module.exports.test1 = function(){
