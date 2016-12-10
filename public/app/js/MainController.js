@@ -16,23 +16,38 @@
 				$scope.page = 'profile';
 				console.log('user:' + JSON.stringify(data));
 			}, function(error){
+				$scope.user = {};
 				$scope.user_error = error;
-				$scope.page = 'add';
+				$scope.page = 'login';
 			});
-		};
-
-		
+		};		
       
 		$scope.showAdd = function(){
-			$scope.page = 'add';
+			if(!!$scope.user){			
+				$scope.page = 'add';
+			} else {
+				$scope.page = 'login';
+			}
 		};
 
 		$scope.showSearch = function(){
-			$scope.page = 'search';
+			if(!!$scope.user){			
+				$scope.page = 'add';
+			} else {
+				$scope.page = 'search';
+			}
 		};
 
 		$scope.showProfile = function(){
-			$scope.page = 'profile';
+			if(!!$scope.user){			
+				$scope.page = 'add';
+			} else {
+				$scope.page = 'profile';
+			}
+		};
+
+		$scope.showLogin = function(){
+			$scope.page = 'login';
 		}
 						
     }
