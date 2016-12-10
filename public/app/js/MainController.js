@@ -32,17 +32,17 @@
 
 		$scope.showSearch = function(){
 			if(!!$scope.user){			
-				$scope.page = 'add';
-			} else {
 				$scope.page = 'search';
+			} else {
+				$scope.page = 'login';
 			}
 		};
 
 		$scope.showProfile = function(){
 			if(!!$scope.user){			
-				$scope.page = 'add';
-			} else {
 				$scope.page = 'profile';
+			} else {
+				$scope.page = 'login';
 			}
 		};
 
