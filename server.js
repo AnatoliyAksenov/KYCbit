@@ -1,5 +1,5 @@
 var express = require('express');
-var contract = require("contract/index.js");
+var contract = require("./contract/index.js");
 
 
 // Create a new Express application.
