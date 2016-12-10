@@ -22,15 +22,13 @@ module.exports.test = function(){
     if(!!kycbit){        
                 
         var result = kycbit.address;
-        
-        console.log("%j", result);
-        
+                
         return result;
         
     } else {
-        console.log("Error connection");
+        return "Contract not found.";
     }
 
-    return "Error";
+   
 }
 
