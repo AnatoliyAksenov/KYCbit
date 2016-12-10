@@ -19,13 +19,13 @@ if(web3.isConnected()){
 }        
 
 module.exports.test1 = function(){
-    return address;
+    return JSON.stringify(kycbit);
 }
 
 module.exports.test = function(){
     if(!!kycbit){        
                 
-        var result = kycbit.address.call();
+        var result = kycbit;
                 
         return result;
         
