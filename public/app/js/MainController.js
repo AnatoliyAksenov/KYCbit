@@ -23,27 +23,18 @@
 		};		
       
 		$scope.showAdd = function(){
-			if(!!$scope.user){			
-				$scope.page = 'add';
-			} else {
-				$scope.page = 'login';
-			}
+			$scope.page = 'login';
+			
 		};
 
 		$scope.showSearch = function(){
-			if(!!$scope.user){			
-				$scope.page = 'search';
-			} else {
-				$scope.page = 'login';
-			}
+			$scope.page = 'login';
+			
 		};
 
 		$scope.showProfile = function(){
-			if(!!$scope.user){			
-				$scope.page = 'profile';
-			} else {
-				$scope.page = 'login';
-			}
+			$scope.page = 'login';
+			
 		};
 
 		$scope.showLogin = function(){

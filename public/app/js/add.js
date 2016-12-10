@@ -22,15 +22,8 @@
   Add.$inject = ['$scope', 'dataAssistant'];
 
   function Add($scope, dataAssistant){
-    if (!!$scope.$parent.user){
-        $scope.$parent.page = 'login';
-    }
 
-    $scope.add = function(){
-        if (!!$scope.$parent.user){
-            $scope.$parent.page = 'login';
-        }
-
+    $scope.add = function(){        
         var hash = $scope.add_hash;
         dataAssistant.get('/api/add/' + hash).then(function(data){
             
