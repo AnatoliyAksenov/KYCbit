@@ -31,4 +31,10 @@ app.get('/eth/address',
     res.status(200).json('Contract address: [' + address + "]");
   });
 
+app.get('/eth/test1',  
+  function(req, res){
+    var address = contract.test1();
+    res.status(200).json('Contract address: [' + address + "]");
+  });
+
 app.listen(port);

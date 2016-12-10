@@ -18,6 +18,10 @@ if(web3.isConnected()){
         web3.eth.defaultAccount = web3.eth.accounts[0];
 }        
 
+module.exports.test1 = function(){
+    return address;
+}
+
 module.exports.test = function(){
     if(!!kycbit){        
                 
