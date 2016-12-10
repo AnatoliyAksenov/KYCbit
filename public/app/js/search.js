@@ -11,7 +11,7 @@
       scope:{
       },
       templateUrl: '/templates/search.html',
-      controller: Searhc,
+      controller: Search,
       bindToController: true
     };
 
