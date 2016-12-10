@@ -28,7 +28,7 @@ app.get('/api/list',
 app.get('/eth/address',  
   function(req, res){
     var address = contract.test();
-    res.status(200).json(address);
+    res.status(200).json('Contract address: [' + address + "]");
   });
 
 app.listen(port);
