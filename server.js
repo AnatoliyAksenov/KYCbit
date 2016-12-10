@@ -25,10 +25,10 @@ app.get('/api/list',
     res.status(200).json({list: 'list'});
   });
 
-app.get('/eth/address',
-
+app.get('/eth/address',  
   function(req, res){
-    res.status(200).json(contract.test);
+    var address = contract.test();
+    res.status(200).json(address);
   });
 
 app.listen(port);
