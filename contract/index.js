@@ -31,6 +31,6 @@ module.exports.test = function(){
         console.log("Error connection");
     }
 
-    return null;
+    return "Error";
 }
 
