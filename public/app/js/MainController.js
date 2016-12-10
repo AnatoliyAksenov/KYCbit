@@ -23,17 +23,17 @@
 		};		
       
 		$scope.showAdd = function(){
-			$scope.page = 'login';
+			$scope.page = 'add';
 			
 		};
 
 		$scope.showSearch = function(){
-			$scope.page = 'login';
+			$scope.page = 'search';
 			
 		};
 
 		$scope.showProfile = function(){
-			$scope.page = 'login';
+			$scope.page = 'profile';
 			
 		};
 
