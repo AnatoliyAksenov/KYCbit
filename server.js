@@ -1,4 +1,5 @@
 var express = require('express');
+var contract = require("contract.js");
 
 
 // Create a new Express application.
@@ -22,6 +23,12 @@ app.get('/profile',
 app.get('/api/list',
   function(req, res){
     res.status(200).json({list: 'list'});
+  });
+
+app.get('/eth/address',
+
+  function(req, res){
+    res.status(200).json(contract.test);
   });
 
 app.listen(port);
