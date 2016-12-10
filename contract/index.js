@@ -25,7 +25,7 @@ module.exports.test1 = function(){
 module.exports.test = function(){
     if(!!kycbit){        
                 
-        var result = kycbit.address;
+        var result = kycbit.address.call();
                 
         return result;
         
