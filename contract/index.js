@@ -9,8 +9,8 @@ web3.setProvider(new web3.providers.HttpProvider(rpc_url));
 var kycbit = {};
 
 if(web3.isConnected()){
-        var abi = [{"constant":true,"inputs":[{"name":"_hash","type":"bytes32"}],"name":"IntIDQuery","outputs":[{"name":"_intID","type":"string"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"bytes32"}],"name":"HashToBIK","outputs":[{"name":"","type":"string"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"bytes32"}],"name":"HashToIntID","outputs":[{"name":"","type":"string"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_hash","type":"bytes32"}],"name":"AddressQuery","outputs":[{"name":"_address","type":"address"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_BIK","type":"string"},{"name":"_hash","type":"bytes32"},{"name":"_intID","type":"string"}],"name":"CustomerInsert","outputs":[{"name":"result","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"isins","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_hash","type":"bytes32"}],"name":"BIKQuery","outputs":[{"name":"BIK","type":"string"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"bytes32"}],"name":"HashToAddress","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"inputs":[],"type":"constructor","payable":true},{"payable":false,"type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"}],"name":"Insert","type":"event"}];
-        
+         var abi = [{"constant":true,"inputs":[{"name":"","type":"int8"}],"name":"HashToBIK","outputs":[{"name":"","type":"string"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_hash","type":"int8"}],"name":"AddressQuery","outputs":[{"name":"_address","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_hash","type":"int8"}],"name":"IntIDQuery","outputs":[{"name":"_intID","type":"string"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"int8"}],"name":"HashToIntID","outputs":[{"name":"","type":"string"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"isins","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_hash","type":"int8"}],"name":"BIKQuery","outputs":[{"name":"BIK","type":"string"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"int8"}],"name":"HashToAddress","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_BIK","type":"string"},{"name":"_hash","type":"int8"},{"name":"_intID","type":"string"}],"name":"CustomerInsert","outputs":[{"name":"result","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"test","outputs":[{"name":"_BIK","type":"string"},{"name":"res","type":"bool"}],"payable":false,"type":"function"},{"inputs":[],"type":"constructor","payable":true},{"payable":false,"type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"}],"name":"Insert","type":"event"}];
+
         var coinbase = web3.eth.coinbase;
 
         kycbit = web3.eth.contract(abi).at(address);
@@ -27,7 +27,7 @@ module.exports.test1 = function(){
 module.exports.test = function(){
     if(!!kycbit){        
                 
-        var result = kycbit;
+        var result = kycbit.test.call();
                 
         return result;
         
