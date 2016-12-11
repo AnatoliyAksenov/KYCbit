@@ -24,8 +24,8 @@
   function Add($scope, dataAssistant){
 
     $scope.add = function(){        
-        var hash = $scope.hash;
-        dataAssistant.get('/api/add/' + hash).then(function(data){
+        var hash = '0xa18fdc5ca4dab088722bcaf62a31255dca032f76';
+        dataAssistant.get('/eth/CustomerInsert/' + hash).then(function(data){
             
             $scope.add_result = data;
         },function(error){

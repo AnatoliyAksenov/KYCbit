@@ -26,7 +26,7 @@
     
       $scope.search = function(){
         var hash = $scope.query_hash;
-        dataAssistant.get('/api/search/' + hash).then(function(data){            
+        dataAssistant.get('/eth/test').then(function(data){            
             $scope.search_result = data;
         },function(error){
             $scope.search_error = error;

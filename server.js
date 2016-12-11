@@ -25,16 +25,29 @@ app.get('/api/list',
     res.status(200).json({list: 'list'});
   });
 
-app.get('/eth/address',  
+app.get('/eth/test',  
   function(req, res){
-    var address = contract.test();
-    res.status(200).json('Contract address: [' + address + "]");
+    var test = contract.test();
+    res.status(200).json('Contract address: [' + test + "]");
   });
 
-app.get('/eth/test1',  
+app.get('/eth/address',  
   function(req, res){
-    var address = contract.test1();
-    res.status(200).json('Contract address: [' + address + "]");
+    var address = contract.address();
+    res.status(200).json('Result: [' + address + "]");
   });
+
+app.get('/eth/BIKQuery',
+  function(req, res){
+    var BIKresult = contract.BIKQuery();
+    res.status(200).json('BIKQuery: [' + BIKresult + "]");
+  });
+
+app.get('/eth/CustomerInsert/:hash',
+  function(req, res){
+    var CustIns = contract.CustomerInsert(req.params.hash);
+    res.status(200).json('CustomerInsert: [' + CustIns + "]");
+  });
+
 
 app.listen(port);

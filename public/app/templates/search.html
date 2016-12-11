@@ -21,14 +21,14 @@
         </button>
         <h4 class="modal-title" id="myModalLabel">Результат запроса</h4>
       </div>
-      <div class="modal-body" ng-if="!!result">
-        <span style="display: block; word-wrap: break-word;">Результат: {{result}}</span>
+      <div class="modal-body" ng-if="!!search_result">
+        <span style="display: block; word-wrap: break-word;">Результат: {{search_result}}</span>
       </div>
-      <div class="modal-body" ng-if="!!error">
-        <span style="display:block; word-wrap: break-word;">Ошибка: {{error}}</span>
+      <div class="modal-body" ng-if="!!search_error">
+        <span style="display:block; word-wrap: break-word;">Ошибка: {{search_error}}</span>
       </div>
       
-      <div class="modal-body" ng-if="!result && !error">
+      <div class="modal-body" ng-if="!search_result && !search_error">
         <i class="fa fa-cog fa-spin fa-1x fa-fw"></i>
       </div>
       
