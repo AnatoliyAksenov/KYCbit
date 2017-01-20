@@ -1,4 +1,5 @@
 var express = require('express');
+var http = require('http');
 var contract = require("./contract/index.js");
 
 
@@ -49,5 +50,32 @@ app.get('/eth/CustomerInsert/:hash',
     res.status(200).json('CustomerInsert: [' + CustIns + "]");
   });
 
+var httpServer = http.createServer(app);
+httpServer.listen(port, function(){
+  console.log('HTTP server listening on port:' + port);
+});
 
-app.listen(port);
+// WebSocket server
+var io = require('socket.io')(httpServer);
+
+//io.listen(httpServer);
+
+io.on('connection', function(socket) {
+	console.log("connected");
+	socket.on('wait:start', function(data){
+		console.log(data);
+		
+		contract.waitAnswer(data).then(function(result){
+		  socket.emit('wait:end', data);
+		});
+		
+		/*
+		setTimeout(function(){
+		  if(Math.random() > 0.5)
+		    socket.emit('wait:end', {result: true});
+		  else
+		    socket.emit('wait:end', {result: false});
+		    
+		},5000);*/
+	});
+});
